@@ -13,7 +13,7 @@ type App = {
   CNAME: string;
   GitHub: string;
   "サブドメイン": string;
-  "市区町村名": string;
+  "地域名": string;
   "都道府県名": string;
 }
 
