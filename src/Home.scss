@@ -1,0 +1,118 @@
+.home
+{
+  width: 720px;
+  max-width: calc(100% - 24px);
+  margin: 8px auto;
+  padding: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+
+  .branding
+  {
+    h1.iemeshi
+    {
+      line-height: 60px;
+      font-size: 48px;
+
+      img
+      {
+        width: 60px;
+        height: 60px;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .map-container
+  {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+
+    .branding
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .svg-map
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: auto;
+      width: 100%;
+      padding: 0;
+      background-image: url('./background.jpg');
+      background-size: cover;
+      mask-image: url(https://raw.githubusercontent.com/geolonia/japanese-prefectures/master/map-polygon.svg);
+    }
+  }
+
+  .text-prefs
+  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 16px;
+
+    .pref
+    {
+      width: 25%;
+      padding: 4px;
+      box-sizing: border-box;
+
+      button
+      {
+        display: block;
+        background-color: #f5f5f5;
+        width: 100%;
+        text-align: center;
+        padding: 4px;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+        color: #cccccc;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button.active
+      {
+        background-color: #007bff;
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .geolonia-svg-map .prefecture
+  {
+    fill: rgba(0, 0, 0, 0.6);
+    stroke: #ffffff;
+  }
+
+  .geolonia-svg-map .prefecture.active
+  {
+    fill: transparent;
+    cursor: pointer;
+  }
+
+  .geolonia-svg-map .prefecture.active:hover
+  {
+    fill: rgba(255, 0, 0, 0.4);
+  }
+
+  .geolonia-svg-map .boundary-line
+  {
+    stroke: transparent;
+
+    path
+    {
+      stroke: transparent;
+      fill: transparent;
+    }
+  }
+}
