@@ -51,25 +51,23 @@ const Content = () => {
         if (mapContainer) {
           mapContainer.innerHTML = svg
 
-          const prefs = document.querySelectorAll('.geolonia-svg-map .prefecture')
-          prefs.forEach((pref) => {
-            const _pref = pref as SVGElement
-            if (_pref.dataset && _pref.dataset.code && activePrefs && activePrefs[Number(_pref.dataset.code)]) {
-              _pref.classList.add('active')
+          const prefs = document.querySelectorAll<HTMLElement>('.geolonia-svg-map .prefecture')
+          prefs.forEach((pref: HTMLElement) => {
+            if (pref.dataset && pref.dataset.code && activePrefs && activePrefs[Number(pref.dataset.code)]) {
+              pref.classList.add('active')
 
-              _pref.addEventListener('click', (event) => {
+              pref.addEventListener('click', (event) => {
                 // @ts-ignore
                 event.currentTarget.style.fill = 'rgba(255, 0, 0, 0.4)'
-                window.location.hash = `/${_pref.dataset.code}`
+                window.location.hash = `/${pref.dataset.code}`
               })
             }
           })
         }
 
-        const prefs = document.querySelectorAll('.text-prefs .pref button')
-        prefs.forEach((pref) => {
-          const _pref = pref as HTMLButtonElement
-          if (_pref.dataset && _pref.dataset.code && activePrefs && activePrefs[Number(_pref.dataset.code)]) {
+        const prefs = document.querySelectorAll<HTMLAnchorElement>('.text-prefs .pref .link')
+        prefs.forEach((pref: HTMLAnchorElement) => {
+          if (pref.dataset && pref.dataset.code && activePrefs && activePrefs[Number(pref.dataset.code)]) {
             pref.classList.add('active')
           }
         })
@@ -78,7 +76,9 @@ const Content = () => {
   }, [container, activePrefs])
 
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-    window.location.hash = `/${event.currentTarget.dataset.code}`
+    if (event.currentTarget.classList.contains('active')) {
+      window.location.hash = `/${event.currentTarget.dataset.code}`
+    }
   }
 
   return (
@@ -91,7 +91,7 @@ const Content = () => {
       </div>
       <div className="text-prefs">
         {prefs.map((item) =>
-          <div key={item.code} className="pref"><button data-code={item.code} onClick={clickHandler}>{item.name}</button></div>
+          <div key={item.code} className="pref"><button className="link" data-code={item.code} onClick={clickHandler}>{item.name}</button></div>
         )}
       </div>
     </div>
