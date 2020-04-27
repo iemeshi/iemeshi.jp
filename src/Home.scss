@@ -17,6 +17,10 @@
         margin-right: 4px;
       }
     }
+    h2
+    {
+      margin-top: 8px;
+    }
   }
 
   .map-container
@@ -86,19 +90,19 @@
 
   .geolonia-svg-map .prefecture
   {
-    fill: rgba(0, 0, 0, 0.6);
+    fill: transparent;
     stroke: #ffffff;
   }
 
   .geolonia-svg-map .prefecture.active
   {
-    fill: transparent;
+    fill: rgba(255, 0, 0, 0.4);
     cursor: pointer;
   }
 
   .geolonia-svg-map .prefecture.active:hover
   {
-    fill: rgba(255, 0, 0, 0.4);
+    fill: rgba(255, 0, 0, 0.6);
   }
 
   .geolonia-svg-map .boundary-line

@@ -86,6 +86,7 @@ const Content = () => {
       <div className="map-container">
         <div className="branding">
           <h1 className="iemeshi"><img src={logo} alt=""/>イエメシ</h1>
+          <h2>テイクアウトができるお店</h2>
         </div>
         <div className="svg-map"></div>
       </div>
