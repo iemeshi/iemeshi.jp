@@ -1,0 +1,68 @@
+<html lang="ja"><head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./page.css">
+    <title>地元のイエメシアプリをつくろう</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="branding">
+        <h1 class="iemeshi"><img src="/static/media/logo.4302ea69.svg" alt="">イエメシ</h1>
+      </div>
+      <div id="md-container"><h1 id="">地元のイエメシアプリをつくろう</h1>
+<h2 id="-1">フォーク</h2>
+<p>まず、以下のリポジトリをフォークしてください。</p>
+<p><a href="https://github.com/iemeshi/app">https://github.com/iemeshi/app</a></p>
+<h2 id="-2">サイト全体の設定</h2>
+<p><code>config.yml</code> を書き換えることでサイト全体の設定を変更できます。</p>
+<p>設定の例:</p>
+<pre><code class="yaml language-yaml">title: 和歌山県串本町
+description: 和歌山県串本町内でテイクアウトできるお店
+data_url: https://example.com/path/to/csv
+</code></pre>
+<h2 id="-3">店舗データについて</h2>
+<p>店舗データは CSV 以下のいずれかの方法で店舗ファイルを作成して、<code>config.yml</code> にその CSV までの URL を設定してください。</p>
+<h3 id="csv">CSV の列について</h3>
+<p>以下の Google スプレッドシートと同じ列の CSV を作ってください。</p>
+<p><a href="https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0">https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0</a></p>
+<p><code>緯度</code>、<code>経度</code>、<code>店名</code> のみが必須で、これらのどれか一つでも入力されていないとアプリ上には表示されません。</p>
+<p>なお、データは AJAX で常時読み込んでいますので、CSV が編集されるとほぼ同時にアプリ側にも反映されると考えてください。（キャッシュで多少タイムラグがあります。）</p>
+<h3 id="google">Google スプレッドシートを使う方法</h3>
+<p>上述の Google スプレッドシートをコピーして、データを追加してください。</p>
+<p>Google スプレッドシート の URL は通常、以下のようなフォーマットの URL 担っています。</p>
+<pre><code>https://docs.google.com/spreadsheets/d/&lt;:id&gt;/edit#gid=&lt;:gid&gt;
+</code></pre>
+<p>これを以下のように置き換えることで、CSV フォーマットでアクセスできます。</p>
+<pre><code>https://docs.google.com/spreadsheets/d/&lt;:id&gt;/export?format=csv&amp;gid=&lt;:gid&gt;
+</code></pre>
+<p>この URL を、<code>config.yml</code> に記述することで、データを読み込むことができます。</p>
+<p>例:</p>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0">https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&amp;gid=0">https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&amp;gid=0</a></li>
+</ul>
+<h3 id="github">GitHub を使用する方法</h3>
+<p>GitHub 上の任意のリポジトリに、以下の行で始まる CSV フォーマットのファイルをコミットしてください。</p>
+<pre><code>緯度,経度,店名,紹介文,住所,電話番号,営業時間,テイクアウト営業時間,ジャンル,価格帯,支払い方法,Instagram,Twitter,公式サイト
+</code></pre>
+<p>次に、CSV ファイルへの URL を以下のスクリーンショットの要領で取得して、<code>config.yml</code> にペーストしてください。</p>
+<p><img src="https://www.evernote.com/l/ABUG24eSZOxPpqjYbKB0h2LNO-PjcQoDsLUB/image.png" alt=""></p>
+<p>サンプルリポジトリは以下のとおりです。</p>
+<p><a href="https://github.com/iemeshi/sample-csv">https://github.com/iemeshi/sample-csv</a></p>
+<h2 id="-4">アプリの公開について</h2>
+<p>このアプリは GitHub Pages か Netlify で公開されることを想定しています。</p>
+<p>GitHub Pages を使用するには、GitHub Actions や Circle CI でビルドを行う必要がありますので、Netlify が簡単だと思います。</p>
+<h3 id="-5">ドメインについて</h3>
+<p>このアプリでは <a href="https://geolonia.com/">Geolonia</a> の地図を使用していますが、API キーによる制限により、以下のドメイン名でのみ利用可能です。</p>
+<ul>
+<li><code>https://*.github.io/</code></li>
+<li><code>https://*.iemeshi.jp/</code></li>
+</ul>
+<p><code>https://*.iemeshi.jp</code> ドメインについては、無償で提供いたしますので、以下のリポジトリの <code>app.json</code> にご希望のサブドメインを記述してプルリクエストを送ってください。</p>
+<p><a href="https://github.com/iemeshi/registry">https://github.com/iemeshi/registry</a></p></div>
+    </div>
+
+    <div class="footer"><a href="/">ホーム</a> | <a href="about.html">イエメシについて</a> | <a href="develop.html">地元のアプリを作ろう</a></div>
+  
+
+</body></html>
