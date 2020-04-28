@@ -88,5 +88,3 @@ GitHub Pages を使用するには、GitHub Actions や Circle CI でビルド�
 `https://*.iemeshi.jp` ドメインについては、無償で提供いたしますので、以下のリポジトリの `app.json` にご希望のサブドメインを記述してプルリクエストを送ってください。
 
 [https://github.com/iemeshi/registry](https://github.com/iemeshi/registry)
-
-## ちんぷんかんぷんだけど作ってみたい方へ
