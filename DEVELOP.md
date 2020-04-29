@@ -15,8 +15,16 @@
 ```yaml
 title: 和歌山県串本町
 description: 和歌山県串本町内でテイクアウトできるお店
-data_url: https://example.com/path/to/csv
+data_url: https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&gid=0
+repository: https://github.com/iemeshi/kushimoto.iemeshi.jp
+form: https://docs.google.com/forms/d/1HZw3bCQ2Rt-0IYJyEfj2IlWS0OvgiGXklkKZ74Se6T0/edit?no_redirect
 ```
+
+* `title`: サイトのタイトルです。多くの場合、対象となる地域であるべきです。
+* `description`: サイトの概要文です。
+* `data_url`: アプリで読み込む CSV データまでの URL を記述してください。SSL は必須です。
+* `repository`: アプリの GitHub リポジトリの URL を記述してください。
+* `form`: データの追加/更新用の申請フォームの URL を記述してください。
 
 ## 店舗データについて
 
@@ -88,3 +96,8 @@ GitHub Pages を使用するには、GitHub Actions や Circle CI でビルド�
 `https://*.iemeshi.jp` ドメインについては、無償で提供いたしますので、以下のリポジトリの `app.json` にご希望のサブドメインを記述してプルリクエストを送ってください。
 
 [https://github.com/iemeshi/registry](https://github.com/iemeshi/registry)
+
+#### 注意
+
+イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。
+
