@@ -2,7 +2,7 @@
 
 イエメシは、オープンソースのテイクアウト地図アプリ用のフレームワークです。
 
-![](https://www.evernote.com/l/ABWlLogTBsdKkrB6KAym3fn-PsOcbGuS8jAB/image.png)
+![](https://www.evernote.com/l/ABUDOiwYd2FKFZKcSRHPltEATY0iljHbjI0B/image.png)
 
 ## 特徴
 
