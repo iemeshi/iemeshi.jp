@@ -24,7 +24,7 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 * `description`: サイトの概要文です。
 * `data_url`: アプリで読み込む CSV データまでの URL を記述してください。SSL は必須です。
 * `repository`: アプリの GitHub リポジトリの URL を記述してください。
-* `form`: データの追加/更新用の申請フォームの URL を記述してください。
+* `form_url`: データの追加/更新用の申請フォームの URL を記述してください。
 
 ## 店舗データについて
 
