@@ -26,6 +26,12 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 * `repository`: アプリの GitHub リポジトリの URL を記述してください。
 * `form_url`: データの追加/更新用の申請フォームの URL を記述してください。
 
+### `form_url` について
+
+データの追加/更新のためのフォームは、Google Form 等を使用してご自身でご用意お願いします。
+
+デフォルトの URL は、串本版のフォームになっているのでかならず差し替えてください。
+
 ## 店舗データについて
 
 店舗データは CSV 以下のいずれかの方法で店舗ファイルを作成して、`config.yml` にその CSV までの URL を設定してください。

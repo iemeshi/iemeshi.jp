@@ -28,8 +28,11 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 <li><code>description</code>: サイトの概要文です。</li>
 <li><code>data_url</code>: アプリで読み込む CSV データまでの URL を記述してください。SSL は必須です。</li>
 <li><code>repository</code>: アプリの GitHub リポジトリの URL を記述してください。</li>
-<li><code>form</code>: データの追加/更新用の申請フォームの URL を記述してください。</li>
+<li><code>form_url</code>: データの追加/更新用の申請フォームの URL を記述してください。</li>
 </ul>
+<h3 id="form_url"><code>form_url</code> について</h3>
+<p>データの追加/更新のためのフォームは、Google Form 等を使用してご自身でご用意お願いします。</p>
+<p>デフォルトの URL は、串本版のフォームになっているのでかならず差し替えてください。</p>
 <h2 id="-3">店舗データについて</h2>
 <p>店舗データは CSV 以下のいずれかの方法で店舗ファイルを作成して、<code>config.yml</code> にその CSV までの URL を設定してください。</p>
 <h3 id="csv">CSV の列について</h3>
@@ -63,7 +66,7 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 <p>このアプリは GitHub Pages か Netlify で公開されることを想定しています。</p>
 <p>GitHub Pages を使用するには、GitHub Actions や Circle CI でビルドを行う必要がありますので、Netlify が簡単だと思います。</p>
 <h3 id="-5">ドメインについて</h3>
-<p>このアプリでは <a href="https://geolonia.com/">Geolonia</a> の地図を使用しており、オープンソースプロジェクト向けの 共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。</p>
+<p>このアプリでは <a href="https://geolonia.com/">Geolonia</a> の地図を使用しており、オープンソースプロジェクト向けの共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。</p>
 <ul>
 <li><code>https://*.github.io/</code></li>
 <li><code>https://*.iemeshi.jp/</code></li>
