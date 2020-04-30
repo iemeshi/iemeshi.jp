@@ -63,13 +63,25 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 <p>このアプリは GitHub Pages か Netlify で公開されることを想定しています。</p>
 <p>GitHub Pages を使用するには、GitHub Actions や Circle CI でビルドを行う必要がありますので、Netlify が簡単だと思います。</p>
 <h3 id="-5">ドメインについて</h3>
-<p>このアプリでは <a href="https://geolonia.com/">Geolonia</a> の地図を使用していますが、API キーによる制限により、以下のドメイン名でのみ利用可能です。</p>
+<p>このアプリでは <a href="https://geolonia.com/">Geolonia</a> の地図を使用しており、オープンソースプロジェクト向けの 共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。</p>
 <ul>
 <li><code>https://*.github.io/</code></li>
 <li><code>https://*.iemeshi.jp/</code></li>
 </ul>
-<p><code>https://*.iemeshi.jp</code> ドメインについては、無償で提供いたしますので、以下のリポジトリの <code>app.json</code> にご希望のサブドメインを記述してプルリクエストを送ってください。</p>
+<p><code>https://*.iemeshi.jp</code> ドメインについては、無償で提供いたしますので、以下のリポジトリの <code>apps.json</code> にご希望のサブドメインを記述してプルリクエストを送ってください。</p>
 <p><a href="https://github.com/iemeshi/registry">https://github.com/iemeshi/registry</a></p>
+<h4 id="netlifyiemeshijp">Netlify で iemeshi.jp のサブドメインを設定する</h4>
+<p>イエメシアプリを Netlify で公開する場合の、カスタムドメインの設定方法について解説します。サイトのデプロイが終わったら、ウィザードに従って <code>Set up a custom domain</code> のページに移動して下さい。</p>
+<p><img src="images/netlify-subdomain-01.png" alt="カスタムドメインの設定を始める"></p>
+<p>ページのフォームに希望のサブドメインを入力してください。例えば <code>your-city</code> というサブドメインを使いたい場合、 <code>your-city.iemeshi.jp</code> と入力します。</p>
+<p><img src="images/netlify-subdomain-02.png" alt="サブドメインを入力する"></p>
+<p><code>.jp domains can't be registered through Netlify.</code> と表示されます。そのまま <code>Yes, add domain</code> のボタンを押してください。</p>
+<p><img src="images/netlify-subdomain-03.png" alt="jp ドメインを使う"></p>
+<p>これで設定が完了しました。 <code>Primart domain</code> として <code>your-city.iemeshi.jp</code> が登録されているはずです。
+なお、 <a href="https://github.com/iemeshi/registry">iemeshi/registry</a> へのプルリクエストがまだマージされていない場合、<code>Check DNS Configuration</code> と表示されます。</p>
+<p><img src="images/netlify-subdomain-04.png" alt="設定完了"></p>
+<p>カスタムドメインの設定が完了すると自動的に HTTPS が利用できるようになります。この際反映までに少し時間がかかる場合がありますので、少し待ってからダッシュボードをリロードしてみて下さい。</p>
+<p><img src="images/netlify-subdomain-05.png" alt="HTTPS"></p>
 <h4 id="-6">注意</h4>
 <p>イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。</p></div>
     </div>
