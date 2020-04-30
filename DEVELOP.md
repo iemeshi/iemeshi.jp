@@ -88,16 +88,38 @@ GitHub Pages を使用するには、GitHub Actions や Circle CI でビルド�
 
 ### ドメインについて
 
-このアプリでは [Geolonia](https://geolonia.com/) の地図を使用していますが、API キーによる制限により、以下のドメイン名でのみ利用可能です。
+このアプリでは [Geolonia](https://geolonia.com/) の地図を使用しており、オープンソースプロジェクト向けの 共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。
 
-* `https://*.github.io/`
-* `https://*.iemeshi.jp/`
+- `https://*.github.io/`
+- `https://*.iemeshi.jp/`
 
-`https://*.iemeshi.jp` ドメインについては、無償で提供いたしますので、以下のリポジトリの `app.json` にご希望のサブドメインを記述してプルリクエストを送ってください。
+`https://*.iemeshi.jp` ドメインについては、無償で提供いたしますので、以下のリポジトリの `apps.json` にご希望のサブドメインを記述してプルリクエストを送ってください。
 
 [https://github.com/iemeshi/registry](https://github.com/iemeshi/registry)
+
+#### Netlify で iemeshi.jp のサブドメインを設定する
+
+イエメシアプリを Netlify で公開する場合の、カスタムドメインの設定方法について解説します。サイトのデプロイが終わったら、ウィザードに従って `Set up a custom domain` のページに移動して下さい。
+
+![カスタムドメインの設定を始める](images/netlify-subdomain-01.png)
+
+ページのフォームに希望のサブドメインを入力してください。例えば `your-city` というサブドメインを使いたい場合、 `your-city.iemeshi.jp` と入力します。
+
+![サブドメインを入力する](images/netlify-subdomain-02.png)
+
+`.jp domains can't be registered through Netlify.` と表示されます。そのまま `Yes, add domain` のボタンを押してください。
+
+![jp ドメインを使う](images/netlify-subdomain-03.png)
+
+これで設定が完了しました。 `Primart domain` として `your-city.iemeshi.jp` が登録されているはずです。
+なお、 [iemeshi/registry](https://github.com/iemeshi/registry) へのプルリクエストがまだマージされていない場合、`Check DNS Configuration` と表示されます。
+
+![設定完了](images/netlify-subdomain-04.png)
+
+カスタムドメインの設定が完了すると自動的に HTTPS が利用できるようになります。この際反映までに少し時間がかかる場合がありますので、少し待ってからダッシュボードをリロードしてみて下さい。
+
+![HTTPS](images/netlify-subdomain-05.png)
 
 #### 注意
 
 イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。
-
