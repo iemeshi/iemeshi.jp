@@ -19,8 +19,17 @@
 <p>設定の例:</p>
 <pre><code class="yaml language-yaml">title: 和歌山県串本町
 description: 和歌山県串本町内でテイクアウトできるお店
-data_url: https://example.com/path/to/csv
+data_url: https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&amp;gid=0
+repository: https://github.com/iemeshi/kushimoto.iemeshi.jp
+form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgActbeMOm2450dRfZroQ/viewform
 </code></pre>
+<ul>
+<li><code>title</code>: サイトのタイトルです。多くの場合、対象となる地域であるべきです。</li>
+<li><code>description</code>: サイトの概要文です。</li>
+<li><code>data_url</code>: アプリで読み込む CSV データまでの URL を記述してください。SSL は必須です。</li>
+<li><code>repository</code>: アプリの GitHub リポジトリの URL を記述してください。</li>
+<li><code>form</code>: データの追加/更新用の申請フォームの URL を記述してください。</li>
+</ul>
 <h2 id="-3">店舗データについて</h2>
 <p>店舗データは CSV 以下のいずれかの方法で店舗ファイルを作成して、<code>config.yml</code> にその CSV までの URL を設定してください。</p>
 <h3 id="csv">CSV の列について</h3>
@@ -60,7 +69,9 @@ data_url: https://example.com/path/to/csv
 <li><code>https://*.iemeshi.jp/</code></li>
 </ul>
 <p><code>https://*.iemeshi.jp</code> ドメインについては、無償で提供いたしますので、以下のリポジトリの <code>app.json</code> にご希望のサブドメインを記述してプルリクエストを送ってください。</p>
-<p><a href="https://github.com/iemeshi/registry">https://github.com/iemeshi/registry</a></p></div>
+<p><a href="https://github.com/iemeshi/registry">https://github.com/iemeshi/registry</a></p>
+<h4 id="-6">注意</h4>
+<p>イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。</p></div>
     </div>
 
     <div class="footer"><a href="/">ホーム</a> | <a href="about.html">イエメシについて</a> | <a href="develop.html">地元のアプリを作ろう</a></div>
