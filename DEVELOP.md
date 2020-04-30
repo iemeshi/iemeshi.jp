@@ -88,7 +88,7 @@ GitHub Pages を使用するには、GitHub Actions や Circle CI でビルド�
 
 ### ドメインについて
 
-このアプリでは [Geolonia](https://geolonia.com/) の地図を使用しており、オープンソースプロジェクト向けの 共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。
+このアプリでは [Geolonia](https://geolonia.com/) の地図を使用しており、オープンソースプロジェクト向けの共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。
 
 - `https://*.github.io/`
 - `https://*.iemeshi.jp/`
