@@ -48,9 +48,9 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 
 ### Google スプレッドシートを使う方法
 
-上述の Google スプレッドシートをコピーして、データを追加してください。
+上述の Google スプレッドシートをコピーして、データを追加してください。追加後は共有を設定します。「ファイル」->「共有」メニューを開き、左下の「変更」をクリックして「制限付き」を「公開」に変更して「完了」をクリックします。
 
-Google スプレッドシート の URL は通常、以下のようなフォーマットの URL 担っています。
+Google スプレッドシート の URL は通常、以下のようなフォーマットの URL になっています。
 
 ```
 https://docs.google.com/spreadsheets/d/<:id>/edit#gid=<:gid>
