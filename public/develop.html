@@ -41,8 +41,8 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 <p><code>緯度</code>、<code>経度</code>、<code>店名</code> のみが必須で、これらのどれか一つでも入力されていないとアプリ上には表示されません。</p>
 <p>なお、データは AJAX で常時読み込んでいますので、CSV が編集されるとほぼ同時にアプリ側にも反映されると考えてください。（キャッシュで多少タイムラグがあります。）</p>
 <h3 id="google">Google スプレッドシートを使う方法</h3>
-<p>上述の Google スプレッドシートをコピーして、データを追加してください。</p>
-<p>Google スプレッドシート の URL は通常、以下のようなフォーマットの URL 担っています。</p>
+<p>上述の Google スプレッドシートをコピーして、データを追加してください。追加後は共有を設定します。「ファイル」-&gt;「共有」メニューを開き、左下の「変更」をクリックして「制限付き」を「公開」に変更して「完了」をクリックします。</p>
+<p>Google スプレッドシート の URL は通常、以下のようなフォーマットの URL になっています。</p>
 <pre><code>https://docs.google.com/spreadsheets/d/&lt;:id&gt;/edit#gid=&lt;:gid&gt;
 </code></pre>
 <p>これを以下のように置き換えることで、CSV フォーマットでアクセスできます。</p>
@@ -67,7 +67,7 @@ form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgAct
 <p>GitHub Pages を使用するには、GitHub Actions や Circle CI でビルドを行う必要がありますので、Netlify が簡単だと思います。</p>
 <h3 id="-5">ドメインについて</h3>
 <div class="alert">
-誠に恐れ入りますが、現在 *.iemeshi.jp ドメインの割当が意図したとおりに機能しておらず、Netlify に問い合わせ中です。 `*.netlify.app` ドメインでも利用できるように弊社地図サービスを設定しましたので、しばらくの間 `*.netlify.app` ドメインで運用をお願いいたします。
+誠に恐れ入りますが、現在 `*.iemeshi.jp` ドメインの割当が意図したとおりに機能しておらず、Netlify に問い合わせ中です。 `*.netlify.app` ドメインでも利用できるように弊社地図サービスを設定しましたので、しばらくの間 `*.netlify.app` ドメインで運用をお願いいたします。
 </div>
 <p>このアプリでは <a href="https://geolonia.com/">Geolonia</a> の地図を使用しており、オープンソースプロジェクト向けの共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。</p>
 <ul>

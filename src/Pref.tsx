@@ -56,6 +56,17 @@ const Content = () => {
     }
   }
 
+
+  const items = []
+  for (let i = 0; i < apps.length; i++) {
+    const app = apps[i]
+    if (app['GitHub'].match(/^https:\/\/github\.com\/iemeshi\//)) {
+      items.push(<div key={i} className="pref"><button className="link" data-link={`https://${app['サブドメイン']}.iemeshi.jp/`} onClick={clickHandler}>{app['地域名']}</button></div>)
+    } else {
+      items.push(<div key={i} className="pref"><button className="link" data-link={`https://${app['CNAME']}/`} onClick={clickHandler}>{app['地域名']}</button></div>)
+    }
+  }
+
   return (
     <div className="pref">
       <div className="branding">
@@ -63,9 +74,7 @@ const Content = () => {
       </div>
       <h2>{pref}</h2>
       <div className="nav">
-        {apps.map((app, index) =>
-          <div key={index} className="pref"><button className="link" data-link={`https://${app['サブドメイン']}.iemeshi.jp/`} onClick={clickHandler}>{app['地域名']}</button></div>
-        )}
+        {items}
       </div>
 
       <div className="go-back"><a href="#/">戻る</a></div>
