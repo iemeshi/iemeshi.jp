@@ -94,6 +94,10 @@ GitHub Pages を使用するには、GitHub Actions や Circle CI でビルド�
 
 ### ドメインについて
 
+<div class="alert">
+誠に恐れ入りますが、現在 `*.iemeshi.jp` ドメインの割当が意図したとおりに機能しておらず、Netlify に問い合わせ中です。 `*.netlify.app` ドメインでも利用できるように弊社地図サービスを設定しましたので、しばらくの間 `*.netlify.app` ドメインで運用をお願いいたします。
+</div>
+
 このアプリでは [Geolonia](https://geolonia.com/) の地図を使用しており、オープンソースプロジェクト向けの共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。
 
 - `https://*.github.io/`

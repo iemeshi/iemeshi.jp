@@ -83,3 +83,10 @@ ul
 {
   margin-left: 1.5rem;
 }
+
+.alert
+{
+  color: #990000;
+  background-color: #FFcccc;
+  padding: 12px;
+}
