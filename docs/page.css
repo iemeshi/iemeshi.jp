@@ -1,0 +1,92 @@
+.branding
+{
+  text-align: right;
+}
+
+a
+{
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.branding img
+{
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+h1
+{
+  font-size: 1.8rem;
+  border-bottom: 3px double #dedede;
+  margin-bottom: 24px;
+}
+
+.branding h1.iemeshi
+{
+  line-height: 30px;
+  font-size: 24px;
+  border: none;
+}
+
+h2 {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.branding h2
+{
+  margin-top: 8px;
+}
+
+h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+p
+{
+  margin: 1rem 0;
+}
+
+code
+{
+  font-family: Consolas, "Courier New", Courier, Monaco, monospace, "ＭＳ ゴシック", "MS Gothic", Osaka−等幅;
+  background-color: #eeeeee;
+  color: #cc0000;
+  padding: 2px 4px;
+}
+
+pre
+{
+  background-color: #555555;
+  color: #ffffff;
+  padding: 16px;
+}
+
+pre code
+{
+  font-family: Consolas, "Courier New", Courier, Monaco, monospace, "ＭＳ ゴシック", "MS Gothic", Osaka−等幅;
+  white-space: pre-wrap;
+  word-break: break-all;
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+ul
+{
+  margin-left: 1.5rem;
+}
+
+.alert
+{
+  color: #990000;
+  background-color: #FFcccc;
+  padding: 12px;
+}

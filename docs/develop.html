@@ -1,0 +1,98 @@
+<html lang="ja"><head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./page.css">
+    <title>地元のイエメシアプリをつくろう</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="branding">
+        <h1 class="iemeshi"><img src="./logo.svg" alt="">イエメシ</h1>
+      </div>
+      <div id="md-container"><h1 id="">地元のイエメシアプリをつくろう</h1>
+<h2 id="-1">フォーク</h2>
+<p>まず、以下のリポジトリをフォークしてください。</p>
+<p><a href="https://github.com/iemeshi/app">https://github.com/iemeshi/app</a></p>
+<h2 id="-2">サイト全体の設定</h2>
+<p><code>config.yml</code> を書き換えることでサイト全体の設定を変更できます。</p>
+<p>設定の例:</p>
+<pre><code class="yaml language-yaml">title: 和歌山県串本町
+description: 和歌山県串本町内でテイクアウトできるお店
+data_url: https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&amp;gid=0
+repository: https://github.com/iemeshi/kushimoto.iemeshi.jp
+form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgActbeMOm2450dRfZroQ/viewform
+</code></pre>
+<ul>
+<li><code>title</code>: サイトのタイトルです。多くの場合、対象となる地域であるべきです。</li>
+<li><code>description</code>: サイトの概要文です。</li>
+<li><code>data_url</code>: アプリで読み込む CSV データまでの URL を記述してください。SSL は必須です。</li>
+<li><code>repository</code>: アプリの GitHub リポジトリの URL を記述してください。</li>
+<li><code>form_url</code>: データの追加/更新用の申請フォームの URL を記述してください。</li>
+</ul>
+<h3 id="form_url"><code>form_url</code> について</h3>
+<p>データの追加/更新のためのフォームは、Google Form 等を使用してご自身でご用意お願いします。</p>
+<p>デフォルトの URL は、串本版のフォームになっているのでかならず差し替えてください。</p>
+<h2 id="-3">店舗データについて</h2>
+<p>店舗データは CSV 以下のいずれかの方法で店舗ファイルを作成して、<code>config.yml</code> にその CSV までの URL を設定してください。</p>
+<h3 id="csv">CSV の列について</h3>
+<p>以下の Google スプレッドシートと同じ列の CSV を作ってください。</p>
+<p><a href="https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0">https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0</a></p>
+<p><code>緯度</code>、<code>経度</code>、<code>店名</code> のみが必須で、これらのどれか一つでも入力されていないとアプリ上には表示されません。</p>
+<p>なお、データは AJAX で常時読み込んでいますので、CSV が編集されるとほぼ同時にアプリ側にも反映されると考えてください。（キャッシュで多少タイムラグがあります。）</p>
+<h3 id="google">Google スプレッドシートを使う方法</h3>
+<p>上述の Google スプレッドシートをコピーして、データを追加してください。追加後は共有を設定します。「ファイル」-&gt;「共有」メニューを開き、左下の「変更」をクリックして「制限付き」を「公開」に変更して「完了」をクリックします。</p>
+<p>Google スプレッドシート の URL は通常、以下のようなフォーマットの URL になっています。</p>
+<pre><code>https://docs.google.com/spreadsheets/d/&lt;:id&gt;/edit#gid=&lt;:gid&gt;
+</code></pre>
+<p>これを以下のように置き換えることで、CSV フォーマットでアクセスできます。</p>
+<pre><code>https://docs.google.com/spreadsheets/d/&lt;:id&gt;/export?format=csv&amp;gid=&lt;:gid&gt;
+</code></pre>
+<p>この URL を、<code>config.yml</code> に記述することで、データを読み込むことができます。</p>
+<p>例:</p>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0">https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&amp;gid=0">https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&amp;gid=0</a></li>
+</ul>
+<h3 id="github">GitHub を使用する方法</h3>
+<p>GitHub 上の任意のリポジトリに、以下の行で始まる CSV フォーマットのファイルをコミットしてください。</p>
+<pre><code>緯度,経度,店名,紹介文,住所,電話番号,営業時間,テイクアウト営業時間,ジャンル,価格帯,支払い方法,Instagram,Twitter,公式サイト
+</code></pre>
+<p>次に、CSV ファイルへの URL を以下のスクリーンショットの要領で取得して、<code>config.yml</code> にペーストしてください。</p>
+<p><img src="https://www.evernote.com/l/ABUG24eSZOxPpqjYbKB0h2LNO-PjcQoDsLUB/image.png" alt=""></p>
+<p>サンプルリポジトリは以下のとおりです。</p>
+<p><a href="https://github.com/iemeshi/sample-csv">https://github.com/iemeshi/sample-csv</a></p>
+<h2 id="-4">アプリの公開について</h2>
+<p>このアプリは GitHub Pages か Netlify で公開されることを想定しています。</p>
+<p>GitHub Pages を使用するには、GitHub Actions や Circle CI でビルドを行う必要がありますので、Netlify が簡単だと思います。</p>
+<h3 id="-5">ドメインについて</h3>
+<div class="alert">
+誠に恐れ入りますが、現在 `*.iemeshi.jp` ドメインの割当が意図したとおりに機能しておらず、Netlify に問い合わせ中です。 `*.netlify.app` ドメインでも利用できるように弊社地図サービスを設定しましたので、しばらくの間 `*.netlify.app` ドメインで運用をお願いいたします。
+</div>
+<p>このアプリでは <a href="https://geolonia.com/">Geolonia</a> の地図を使用しており、オープンソースプロジェクト向けの共通の API キーが同梱されています。以下のドメイン名でのみ地図を利用できます。</p>
+<ul>
+<li><code>https://*.github.io/</code></li>
+<li><code>https://*.iemeshi.jp/</code></li>
+</ul>
+<p><code>https://*.iemeshi.jp</code> ドメインについては、無償で提供いたしますので、以下のリポジトリの <code>apps.json</code> にご希望のサブドメインを記述してプルリクエストを送ってください。</p>
+<p><a href="https://github.com/iemeshi/registry">https://github.com/iemeshi/registry</a></p>
+<h4 id="netlifyiemeshijp">Netlify で iemeshi.jp のサブドメインを設定する</h4>
+<p>イエメシアプリを Netlify で公開する場合の、カスタムドメインの設定方法について解説します。サイトのデプロイが終わったら、ウィザードに従って <code>Set up a custom domain</code> のページに移動して下さい。</p>
+<p><img src="images/netlify-subdomain-01.png" alt="カスタムドメインの設定を始める"></p>
+<p>ページのフォームに希望のサブドメインを入力してください。例えば <code>your-city</code> というサブドメインを使いたい場合、 <code>your-city.iemeshi.jp</code> と入力します。</p>
+<p><img src="images/netlify-subdomain-02.png" alt="サブドメインを入力する"></p>
+<p><code>.jp domains can't be registered through Netlify.</code> と表示されます。そのまま <code>Yes, add domain</code> のボタンを押してください。</p>
+<p><img src="images/netlify-subdomain-03.png" alt="jp ドメインを使う"></p>
+<p>これで設定が完了しました。 <code>Primart domain</code> として <code>your-city.iemeshi.jp</code> が登録されているはずです。
+なお、 <a href="https://github.com/iemeshi/registry">iemeshi/registry</a> へのプルリクエストがまだマージされていない場合、<code>Check DNS Configuration</code> と表示されます。</p>
+<p><img src="images/netlify-subdomain-04.png" alt="設定完了"></p>
+<p>カスタムドメインの設定が完了すると自動的に HTTPS が利用できるようになります。この際反映までに少し時間がかかる場合がありますので、少し待ってからダッシュボードをリロードしてみて下さい。</p>
+<p><img src="images/netlify-subdomain-05.png" alt="HTTPS"></p>
+<h4 id="-6">注意</h4>
+<p>イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。</p></div>
+    </div>
+
+    <div class="footer"><a href="/">ホーム</a> | <a href="about.html">イエメシについて</a> | <a href="develop.html">地元のアプリを作ろう</a></div>
+  
+
+</body></html>
