@@ -60,13 +60,7 @@ const Content = () => {
   const items = []
   for (let i = 0; i < apps.length; i++) {
     const app = apps[i]
-
-    // Following condition should be removed when problem is solved on netlify.
-    if (app['GitHub'].match(/^https:\/\/github\.com\/iemeshi\//)) {
-      items.push(<div key={i} className="pref"><button className="link" data-link={`https://${app['サブドメイン']}.iemeshi.jp/`} onClick={clickHandler}>{app['地域名']}</button></div>)
-    } else {
-      items.push(<div key={i} className="pref"><button className="link" data-link={`https://${app['CNAME']}/`} onClick={clickHandler}>{app['地域名']}</button></div>)
-    }
+    items.push(<div key={i} className="pref"><button className="link" data-link={`https://${app['サブドメイン']}.iemeshi.jp/`} onClick={clickHandler}>{app['地域名']}</button></div>)
   }
 
   return (
