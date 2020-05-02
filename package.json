@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": ". ./.env && npm run build:doc && react-scripts start",
-    "build": ". ./.env && npm run build:doc && react-scripts build && mv buld docs",
+    "build": ". ./.env && npm run build:doc && react-scripts build",
     "build:doc": "mdhtml DEVELOP.md -t public/template.html -o public/develop.html && mdhtml README.md -t public/template.html -o public/about.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
