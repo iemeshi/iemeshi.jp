@@ -133,3 +133,25 @@ GitHub Pages を使用するには、GitHub Actions や Circle CI でビルド�
 #### 注意
 
 イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。
+
+## iemeshi/app 本体の修正を反映する方法
+
+皆さんのアプリのフォーク元の `iemeshi/app` は、現在もアップデートされています。
+
+不具合等が修正される場合もありますので、たまには以下のようにアップデートすることをおすすめします。
+
+### `config.yml` を別の場所に一時避難する
+
+まず、`config.yml` が壊れないように一時的にデスクトップ等にコピーしておいてください。
+
+### 本体のアップデート
+
+以下のコマンドを順番に実行してください。
+
+```
+git remote add upstream https://github.com/iemeshi/app.git
+git fetch upstream
+git merge upstream/master
+```
+
+最後に `config.yml` をもとに戻して、`git push` してください。
