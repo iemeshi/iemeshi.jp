@@ -89,7 +89,19 @@ form_url: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6s
 <p>カスタムドメインの設定が完了すると自動的に HTTPS が利用できるようになります。この際反映までに少し時間がかかる場合がありますので、少し待ってからダッシュボードをリロードしてみて下さい。</p>
 <p><img src="images/netlify-subdomain-05.png" alt="HTTPS"></p>
 <h4 id="-6">注意</h4>
-<p>イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。</p></div>
+<p>イエメシ以外の他のアプリをこのドメインで配信しないようにお願いします。その場合、予告なしに DNS サーバーの設定を削除することがありますのであらかじめご了承ください。</p>
+<h2 id="iemeshiapp">iemeshi/app 本体の修正を反映する方法</h2>
+<p>皆さんのアプリのフォーク元の <code>iemeshi/app</code> は、現在もアップデートされています。</p>
+<p>不具合等が修正される場合もありますので、たまには以下のようにアップデートすることをおすすめします。</p>
+<h3 id="configyml"><code>config.yml</code> を別の場所に一時避難する</h3>
+<p>まず、<code>config.yml</code> が壊れないように一時的にデスクトップ等にコピーしておいてください。</p>
+<h3 id="-7">本体のアップデート</h3>
+<p>以下のコマンドを順番に実行してください。</p>
+<pre><code>git remote add upstream https://github.com/iemeshi/app.git
+git fetch upstream
+git merge upstream/master
+</code></pre>
+<p>最後に <code>config.yml</code> をもとに戻して、<code>git push</code> してください。</p></div>
     </div>
 
     <div class="footer"><a href="/">ホーム</a> | <a href="about.html">イエメシについて</a> | <a href="develop.html">地元のアプリを作ろう</a></div>
