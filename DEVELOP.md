@@ -17,7 +17,7 @@ title: 和歌山県串本町
 description: 和歌山県串本町内でテイクアウトできるお店
 data_url: https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&gid=0
 repository: https://github.com/iemeshi/kushimoto.iemeshi.jp
-form: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgActbeMOm2450dRfZroQ/viewform
+form_url: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6sgActbeMOm2450dRfZroQ/viewform
 ```
 
 * `title`: サイトのタイトルです。多くの場合、対象となる地域であるべきです。
