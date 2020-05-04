@@ -48,7 +48,15 @@ form_url: https://docs.google.com/forms/d/e/1FAIpQLSdjDvfWD5pIuxYiIgVBBwmsfd8-6s
 
 ### Google スプレッドシートを使う方法
 
-上述の Google スプレッドシートをコピーして、データを追加してください。追加後は共有を設定します。「ファイル」->「共有」メニューを開き、左下の「変更」をクリックして「制限付き」を「公開」に変更して「完了」をクリックします。
+以下のスプレッドシートをコピーしてください。
+
+[https://docs.google.com/spreadsheets/d/1P6HM3YhLvWcfay2V_Pqxv7xPJwU8yR0SzZxinjXW4o4/edit#gid=0](https://docs.google.com/spreadsheets/d/1P6HM3YhLvWcfay2V_Pqxv7xPJwU8yR0SzZxinjXW4o4/edit#gid=0)
+
+![](https://www.evernote.com/l/ABUfB5XRIVFO2KMOyV08gP7ML5jg2ZfZOegB/image.png)
+
+次に共有設定を行ってください。
+
+![](https://www.evernote.com/l/ABU09Me_fxlMAo_TuRzPrvTD8Fd4Ha_bNxoB/image.png)
 
 Google スプレッドシート の URL は通常、以下のようなフォーマットの URL になっています。
 
@@ -62,12 +70,11 @@ https://docs.google.com/spreadsheets/d/<:id>/edit#gid=<:gid>
 https://docs.google.com/spreadsheets/d/<:id>/export?format=csv&gid=<:gid>
 ```
 
-この URL を、`config.yml` に記述することで、データを読み込むことができます。
+上のサンプルスプレッドシートの例では、以下のような URL になります。
 
-例:
-
-* [https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0](https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/edit#gid=0)
-* [https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&gid=0](https://docs.google.com/spreadsheets/d/1zyZQcaK3sREB59gv34aPAvk6NOktLe4P5gM42XmKmAc/export?format=csv&gid=0)
+```
+https://docs.google.com/spreadsheets/d/1P6HM3YhLvWcfay2V_Pqxv7xPJwU8yR0SzZxinjXW4o4/export?format=csv&gid=0
+```
 
 ### GitHub を使用する方法
 
