@@ -16,7 +16,7 @@
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-share": "^4.1.0",
     "typescript": "~3.7.2"
   },
@@ -45,6 +45,6 @@
   "devDependencies": {
     "@types/qrcode.react": "^1.0.0",
     "@types/react-router-dom": "^5.1.4",
-    "node-sass": "^4.13.1"
+    "node-sass": "^9.0.0"
   }
 }
